@@ -10,6 +10,14 @@
 
 ---
 
+## 📸 Platform Dashboard Preview
+
+![AgentSentinel Live Dashboard](./dashboard-preview.png)
+
+*Live OpenTelemetry Agent Observability Workspace, Real-Time Platform Reliability Metrics, and Flamegraph Step Execution DAG.*
+
+---
+
 ## 🎯 Executive Summary & Engineering Vision
 
 Deploying autonomous AI agents into mission-critical workflows demands **enterprise-grade reliability**, **predictable cost control**, **deterministic evaluation benchmarks**, and **zero-trust security**.
@@ -71,7 +79,7 @@ AgentSentinel provides an end-to-end full-stack demonstration of:
 
 ### 1. Clone & Install Dependencies
 ```bash
-git clone https://github.com/YourUsername/agent-sentinel-ai.git
+git clone https://github.com/AnkushMulkar/agent-sentinel-ai.git
 cd agent-sentinel-ai
 npm install
 ```
