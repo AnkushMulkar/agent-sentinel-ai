@@ -12,45 +12,35 @@ export const TelemetryMetrics: React.FC<TelemetryMetricsProps> = ({ metrics }) =
       title: 'Monthly Token Spend',
       value: `$${metrics.totalMonthlyTokenSpendUsd.toLocaleString()}`,
       change: 'Budget Utilization: 68%',
-      isPositive: true,
       icon: DollarSign,
-      color: '#ff2e4c',
       subtitle: 'Across 14 enterprise agent deployments',
     },
     {
       title: 'Global Agent Reliability',
       value: `${metrics.globalReliabilityPercent}%`,
       change: '99.9% Target SLA',
-      isPositive: true,
       icon: ShieldCheck,
-      color: '#ff2e4c',
       subtitle: 'Verified by automated eval benchmarks',
     },
     {
       title: 'p95 Agent Latency SLA',
       value: `${metrics.p95LatencyMs} ms`,
       change: '-340ms vs Q2 baseline',
-      isPositive: true,
       icon: Clock,
-      color: '#ff2e4c',
       subtitle: 'Streaming token execution SLA',
     },
     {
       title: 'Hallucination & Fail Rate',
       value: `${metrics.hallucinationRatePercent}%`,
       change: 'Best-in-class < 1.0%',
-      isPositive: true,
       icon: AlertTriangle,
-      color: '#ff2e4c',
       subtitle: 'Faithfulness ground truth checks',
     },
     {
       title: 'FinOps Cost Guardrail Savings',
       value: `$${metrics.finOpsCostSavedUsd.toLocaleString()}`,
       change: 'Saved via Fallback Routing',
-      isPositive: true,
       icon: PiggyBank,
-      color: '#ff2e4c',
       subtitle: 'Automated low-cost model dispatch',
     },
   ];
@@ -67,36 +57,35 @@ export const TelemetryMetrics: React.FC<TelemetryMetricsProps> = ({ metrics }) =
       {cards.map((card, idx) => {
         const Icon = card.icon;
         return (
-          <div key={idx} className="glass-card" style={{ padding: '1.35rem' }}>
+          <div key={idx} style={{ background: '#111827', borderRadius: '10px', padding: '1.25rem', border: 'none' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-              <span style={{ fontSize: '0.83rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+              <span style={{ fontSize: '0.82rem', color: '#94a3b8', fontWeight: 400 }}>
                 {card.title}
               </span>
               <div
                 style={{
-                  width: '34px',
-                  height: '34px',
-                  borderRadius: '8px',
-                  background: `${card.color}18`,
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '6px',
+                  background: 'rgba(255, 255, 255, 0.05)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  border: `1px solid ${card.color}35`,
                 }}
               >
-                <Icon size={18} color={card.color} />
+                <Icon size={16} color="#3b82f6" />
               </div>
             </div>
 
-            <div style={{ fontSize: '1.8rem', fontWeight: 800, letterSpacing: '-0.03em', color: '#fff', marginBottom: '0.3rem' }}>
+            <div style={{ fontSize: '1.6rem', fontWeight: 500, letterSpacing: '-0.02em', color: '#f8fafc', marginBottom: '0.3rem' }}>
               {card.value}
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.75rem' }}>
-              <span style={{ color: card.isPositive ? '#e4e4e7' : '#ff2e4c', fontWeight: 600 }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.75rem', color: '#64748b', fontWeight: 400 }}>
+              <span style={{ color: '#94a3b8' }}>
                 {card.change}
               </span>
-              <span style={{ color: 'var(--text-dim)' }}>{card.subtitle}</span>
+              <span>{card.subtitle}</span>
             </div>
           </div>
         );
